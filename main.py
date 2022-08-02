@@ -17,13 +17,8 @@ def main():
             my_money_machine.report()
         else:
             drink = options.find_drink(choice)
-            if my_coffee_machine.is_resource_sufficient(drink):
-                if my_money_machine.make_payment(drink.cost):
-                    my_coffee_machine.make_coffee(drink)
-                else:
-                    break
-            else:
-                break
+            if my_coffee_machine.is_resource_sufficient(drink) and my_money_machine.make_payment(drink.cost):
+                my_coffee_machine.make_coffee(drink)
 
 
 if __name__ == "__main__":
